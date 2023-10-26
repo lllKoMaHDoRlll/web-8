@@ -27,6 +27,7 @@ function sendFormData(event) {
       };
 
     request.send(data);
+    clearInputFields(inputEls);
     closeModal();
 }
 
@@ -66,6 +67,14 @@ function isFormValid() {
     }
 
     return true;
+}
+
+function clearInputFields(inputEls) {
+    [...inputEls].forEach(inputEl => {
+        inputEl.value = "";
+        localStorage.setItem(inputEl.id, "");
+    });
+    console.log(localStorage);
 }
 
 function showModal () {
