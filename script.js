@@ -1,24 +1,4 @@
 
-// $(function(){
-//     $(".ajaxForm").submit(function(e){
-//         e.preventDefault();
-//         var href = $(this).attr("action");
-//         $.ajax({
-//             type: "POST",
-//             dataType: "json",
-//             url: href,
-//             data: $(this).serialize(),
-//             success: function(response){
-//                 if(response.status == "success"){
-//                     alert("We received your submission, thank you!");
-//                 }else{
-//                     alert("An error occured: " + response.message);
-//                 }
-//             }
-//         });
-//     });
-// });
-
 function sendFormData(event) {
     console.log("sending form");
     event.preventDefault();
@@ -37,8 +17,7 @@ function sendFormData(event) {
 }
 
 function showModal () {
-    history.pushState({form: true}, "", "?form=true");
-    console.log(history.state);
+    history.pushState({form: true}, "", "#form");
     let modal = document.getElementById("modal");
     modal.style.display = "block";
 }
@@ -47,6 +26,15 @@ function closeModal() {
     history.replaceState({form: false}, "", "/");
     let modal = document.getElementById("modal");
     modal.style.display = "none";
+}
+
+function controlModal() {
+    if(location.hash == "#form") {
+        showModal();
+    }
+    else {
+        closeModal();
+    }
 }
 
 function loadInput(inputEl) {
@@ -92,4 +80,5 @@ document.addEventListener('DOMContentLoaded', function () {
     let submitButton = document.getElementById("submit-button");
     submitButton.addEventListener("click", sendFormData);
 
+    window.addEventListener("popstate", controlModal);
 });
