@@ -37,13 +37,13 @@ function isFormValid() {
     }
 
     let emailEl = document.getElementById("user-email");
-    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(emailEl.value)) {
+    if (emailEl.value != "" && !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(emailEl.value)) {
         alert("Incorrect Email format.");
         return false;
     }
 
     let phoneEl = document.getElementById("user-phone");
-    if (!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/g.test(phoneEl.value)) {
+    if (phoneEl.value != "" && !/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/g.test(phoneEl.value)) {
         alert("Incorrect Phone format.");
         return false;
     }
@@ -55,6 +55,12 @@ function isFormValid() {
     let messageEl = document.getElementById("user-message");
     if (messageEl.value == "") {
         alert("Please, enter message.");
+        return false;
+    }
+
+    let acceptionEl = document.getElementById("user-acception");
+    if (!acceptionEl.checked) {
+        alert("Accept Politics privacy.");
         return false;
     }
 
