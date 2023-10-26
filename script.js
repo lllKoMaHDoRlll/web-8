@@ -15,6 +15,17 @@ function sendFormData(event) {
         data.append(inputEl.id, inputEl.value);
     });
     
+    request.onreadystatechange = () => {
+        if (request.readyState === XMLHttpRequest.DONE) {
+          const status = request.status;
+          if (status === 0 || (status >= 200 && status < 400)) {
+            alert("Form was sended successfully.");
+          } else {
+            alert(`An error was occured while sending form. Error code: ${status}.`);
+          }
+        }
+      };
+
     request.send(data);
 }
 
