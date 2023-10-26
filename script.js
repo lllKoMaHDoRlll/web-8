@@ -90,13 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let feedbackButtonEl = document.getElementById("feedback-button");    
     feedbackButtonEl.addEventListener('click', showModal);
 
-    
-    window.addEventListener('click', function (event) {
-        let modal = document.getElementById("modal");
-        if (event.target == modal) {
-            closeModal();
-        }
-    });
 
     let closeButton = document.getElementById("close-button");
     closeButton.addEventListener("click", closeModal);
