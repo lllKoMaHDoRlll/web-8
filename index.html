@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <div id="modal">
+        <div id="modal-inner">
+            <div id="modal-head">
+                <h1 id="modal-name">Feedback</h1>
+                <span id="close-button"><i class="fa-solid fa-xmark fa-xl"></i></span>
+            </div>
+            <div id="modal-body">
+                <form id="feedback-form" class="ajaxForm" accept-charset="UTF-8">
+                    <div id="form-name">
+                        <label for="user-name">Name:</label>
+                        <input type="text" name="user-name" id="user-name" class="local-save">
+                    </div>
+                    <div id="form-email">
+                        <label for="user-email">Email:</label>
+                        <input type="email" name="user-email" id="user-email" class="local-save">
+                    </div>
+                    <div id="form-phone">
+                        <label for="user-phone">Phone:</label>
+                        <input type="tel" name="user-phone" id="user-phone" class="local-save">
+                    </div>
+                    <div id="form-organisation">
+                        <label for="user-organisation">Organisation:</label>
+                        <input type="text" name="user-organisation" id="user-organisation" class="local-save">
+                    </div>
+                    <div id="form-message">
+                        <label for="user-message">Your problem:</label>
+                        <textarea name="user-message" id="user-message" cols="30" rows="10" class="local-save"></textarea>
+                    </div>
+                    <div id="form-acception">
+                        <input type="checkbox" name="user-acception" id="user-acception" class="local-save" required>
+                        <label for="user-acception">I accept politics privacy.</label>
+                    </div>
+                    <div id="submit-button">
+                        <button type="button" id="submit-button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="feedback-button-outter">
+            <button type="button" id="feedback-button">Send Feedback</button>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/b7fb520c59.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
