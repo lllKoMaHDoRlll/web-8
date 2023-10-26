@@ -2,6 +2,8 @@
 function sendFormData(event) {
     console.log("sending form");
     event.preventDefault();
+    if (!isFormValid()) return false;
+
     let request = new XMLHttpRequest();
     request.open("POST", "https://formcarry.com/s/jfnPbjBfup");
     request.setRequestHeader("ACCEPT", "application/json");
@@ -14,6 +16,38 @@ function sendFormData(event) {
     });
     
     request.send(data);
+}
+
+function isFormValid() {
+    let nameEl = document.getElementById("user-name");
+    if (nameEl.value == "") {
+        alert("Please, enter name.");
+        return false;
+    }
+
+    let emailEl = document.getElementById("user-email");
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(emailEl.value)) {
+        alert("Incorrect Email format.");
+        return false;
+    }
+
+    let phoneEl = document.getElementById("user-phone");
+    if (!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/g.test(phoneEl.value)) {
+        alert("Incorrect Phone format.");
+        return false;
+    }
+
+
+    let organisationEl = document.getElementById("user-organisation");
+
+
+    let messageEl = document.getElementById("user-message");
+    if (messageEl.value == "") {
+        alert("Please, enter message.");
+        return false;
+    }
+
+    return true;
 }
 
 function showModal () {
