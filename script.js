@@ -27,6 +27,7 @@ function sendFormData(event) {
       };
 
     request.send(data);
+    closeModal();
 }
 
 function isFormValid() {
