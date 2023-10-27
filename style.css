@@ -34,6 +34,11 @@ body {
     padding: 8px;
     color: #FFF;
     font-size: 1.3rem;
+    transition: .2s;
+}
+
+#feedback-button:hover {
+    backdrop-filter: invert(0.2);
 }
 
 
