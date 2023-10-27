@@ -78,13 +78,13 @@ function clearInputFields(inputEls) {
 }
 
 function showModal () {
-    history.pushState({form: true}, "", "#form");
+    history.pushState({form: true}, "", "./#form");
     let modal = document.getElementById("modal");
     modal.style.display = "block";
 }
 
 function closeModal() {
-    history.replaceState({form: false}, "", "/");
+    history.replaceState({form: false}, "", "./");
     let modal = document.getElementById("modal");
     modal.style.display = "none";
 }
@@ -108,7 +108,7 @@ function saveInput(event) {
 
 document.addEventListener('DOMContentLoaded', function () {
     if (history.state == null) {
-        history.pushState({form: false}, "", "/");
+        history.pushState({form: false}, "", "./");
     }
     if (history.state.form) {
         showModal();
