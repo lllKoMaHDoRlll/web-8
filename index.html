@@ -19,31 +19,31 @@
             </div>
             <div id="modal-body">
                 <form id="feedback-form" class="ajaxForm" accept-charset="UTF-8">
-                    <div id="form-name">
+                    <div id="form-name" class="input-outter">
                         <label for="user-name">Name:</label>
-                        <input type="text" name="user-name" id="user-name" class="local-save" required>
+                        <input type="text" name="user-name" id="user-name" class="local-save" required placeholder="Your name">
                     </div>
-                    <div id="form-email">
+                    <div id="form-email" class="input-outter">
                         <label for="user-email">Email:</label>
-                        <input type="email" name="user-email" id="user-email" class="local-save">
+                        <input type="email" name="user-email" id="user-email" class="local-save" placeholder="example@example.com">
                     </div>
-                    <div id="form-phone">
+                    <div id="form-phone" class="input-outter">
                         <label for="user-phone">Phone:</label>
-                        <input type="tel" name="user-phone" id="user-phone" class="local-save">
+                        <input type="tel" name="user-phone" id="user-phone" class="local-save" placeholder="+1-234-567-89-00">
                     </div>
-                    <div id="form-organisation">
+                    <div id="form-organisation" class="input-outter">
                         <label for="user-organisation">Organisation:</label>
-                        <input type="text" name="user-organisation" id="user-organisation" class="local-save">
+                        <input type="text" name="user-organisation" id="user-organisation" class="local-save" placeholder="Your organisation">
                     </div>
-                    <div id="form-message">
+                    <div id="form-message" class="input-outter">
                         <label for="user-message">Your problem:</label>
-                        <textarea name="user-message" id="user-message" cols="30" rows="10" class="local-save" required></textarea>
+                        <textarea name="user-message" id="user-message" rows="5" class="local-save" required></textarea>
                     </div>
                     <div id="form-acception">
-                        <input type="checkbox" name="user-acception" id="user-acception" class="local-save" required>
+                        <input type="checkbox" name="user-acception" id="user-acception" class="local-save" required checked>
                         <label for="user-acception">I accept politics privacy.</label>
                     </div>
-                    <div id="submit-button">
+                    <div id="submit-button-outter">
                         <button type="button" id="submit-button">Submit</button>
                     </div>
                 </form>
