@@ -80,13 +80,13 @@ function clearInputFields(inputEls) {
 function showModal () {
     history.pushState({form: true}, "", "./#form");
     let modal = document.getElementById("modal");
-    modal.style.display = "block";
+    modal.setAttribute("data--modal", "shown");
 }
 
 function closeModal() {
     history.replaceState({form: false}, "", "./");
     let modal = document.getElementById("modal");
-    modal.style.display = "none";
+    modal.setAttribute("data--modal", "hidden");
 }
 
 function controlModal() {
